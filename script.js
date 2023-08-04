@@ -102,7 +102,7 @@ botonAgregar.addEventListener('click', function () {
     listaTelefonos.innerHTML = '';
     celulares.forEach(function (telefono) {
         let telefonoInfo = document.createElement('p');
-        telefonoInfo.textContent = `Nombre: ${telefono.nombre}, Color: ${telefono.color}, Peso: ${telefono.peso}gr, RAM: ${telefono.ram}GB`;
+        telefonoInfo.textContent = `Nombre: ${telefono.nombre}, Color: ${telefono.color}, Peso: ${telefono.peso}gr, Pantalla: ${telefono.pantalla}px, Camara: ${telefono.camara}px, Memoria RAM: ${telefono.ram}GB`;
         listaTelefonos.appendChild(telefonoInfo);
     });
 
