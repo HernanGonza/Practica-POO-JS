@@ -123,6 +123,9 @@ botonFoto.addEventListener('click', function () {
     buscarTelefonoParaFoto(nombreAFoto);
 });
 
-
+botonInfo.addEventListener('click', function () {
+    let nombreAInfo = prompt('Nombre del telefono que quiere informacion');
+    buscarTelefonoParaInfo(nombreAInfo);
+})
 
 
