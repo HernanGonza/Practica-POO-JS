@@ -8,13 +8,14 @@ let listaTelefonos = document.getElementById('listaTelefonos');
 
 //Clase de los objetos//
 class Celular {
-    constructor(nombre, color, peso, rdp, rdc, ram, encendido) {
+    constructor(nombre, color, peso, rdp, rdc, ram, camaraExtra, encendido) {
         this.nombre = nombre;
         this.color = color;
         this.peso = peso;
         this.rdp = rdp;
         this.rdc = rdc;
         this.ram = ram;
+        this.camaraExtra = camaraExtra;
         this.encendido = encendido;
     };
 
@@ -40,7 +41,7 @@ class Celular {
     //Metodo de la clase celular para tomar una foto con el telefono elegido//
     tomarFoto() {
         if (this.encendido == true) {
-            alert(`El celular ${this.nombre} ha tomando una foto de ${this.rdc}mpx de resolucion`);
+            alert(`El celular ${this.nombre} ha tomando una foto de ${this.rdc}mpx de resolucion con su camara principal y ha tomado una foto con ${this.camaraExtra}mpx de resolucion con su camara extra`);
         } else {
             alert(`El celular ${this.nombre} esta apagado, no se puede tomar una foto`);
         }
@@ -97,12 +98,13 @@ botonAgregar.addEventListener('click', function () {
     let pantalla = prompt('Ingrese las pulgadas de la pantalla');
     let camara = prompt('Ingrese los pixeles de la camara en mpx');
     let ram = prompt('Ingrese la memoria RAM del telefono en GB');
-    celulares.push(new Celular(nombre, color, peso, pantalla, camara, ram, false));
+    let camaraExtra = prompt('Ingrese los mpx de la camara extra');
+    celulares.push(new Celular(nombre, color, peso, pantalla, camara, ram, camaraExtra, false));
     console.log(celulares);
     listaTelefonos.innerHTML = '';
     celulares.forEach(function (telefono) {
         let telefonoInfo = document.createElement('p');
-        telefonoInfo.textContent = `Nombre: ${telefono.nombre}, Color: ${telefono.color}, Peso: ${telefono.peso}gr, Pantalla: ${telefono.pantalla}px, Camara: ${telefono.camara}px, Memoria RAM: ${telefono.ram}GB`;
+        telefonoInfo.textContent = `Nombre: ${telefono.nombre}, Color: ${telefono.color}, Peso: ${telefono.peso}gr, Pantalla: ${telefono.rdp}px, Camara: ${telefono.rdc}px, Memoria RAM: ${telefono.ram}GB, Camara Extra: ${telefono.camaraExtra}mpx`;
         listaTelefonos.appendChild(telefonoInfo);
     });
 
